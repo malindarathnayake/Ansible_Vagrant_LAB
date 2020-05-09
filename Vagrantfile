@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 	config.vm.define "controller" do |controller|
-					controller.vm.box = "ubuntu/trusty64"
+					controller.vm.box = "ubuntu/xenial64"
 					controller.vm.hostname = "LAB-Controller"
 					controller.vm.network "public_network", bridge: "Intel(R) I211 Gigabit Network Connection"
 					config.vm.provision "shell",
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 	end
 	(1..3).each do |i|
 	   config.vm.define "vls-node#{i}" do |node|
-		   				node.vm.box = "ubuntu/trusty64"
+		   				node.vm.box = "ubuntu/xenial64"
 		   				node.vm.hostname = "vls-node#{i}"
 		   				node.vm.network "public_network", bridge: "Intel(R) I211 Gigabit Network Connection"
 							config.vm.provision "shell",
